@@ -33,8 +33,8 @@ app.post("/", async (req, res) => {
         console.log(response);
         res.json({ response });
     } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: 'An error occurred' });
+        console.log(error);
+        res.status(500).json({ error: error  });
     }
 });
 
