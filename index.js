@@ -8,7 +8,11 @@ dotenv.config();
 
 const app = express();
 const port = 4000;
-app.use(cors()); 
+app.use(cors({
+    origin: '*', // Replace with your frontend URL
+    methods: ['GET', 'POST', 'OPTIONS'], // Allow specific HTTP methods
+    allowedHeaders: ['Content-Type'], // Allow specific headers
+  })); 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
